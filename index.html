@@ -12,18 +12,19 @@
     
     <style>
         :root {
-            --bg-color: #f8f9fa; /* Fond clair institutionnel */
-            --white: #ffffff;
-            --primary-blue: #0056b3; /* Bleu de conversion type Telegram/Trust */
-            --primary-hover: #004494;
-            --text-dark: #1a1a1a;
-            --text-gray: #4a4a4a;
-            --border-color: #e0e0e0;
+            --bg-dark: #0a0e17; /* Fond très sombre */
+            --bg-card: #131a26;
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+            --trade-green: #10b981; /* Vert bougie haussière */
+            --trade-green-hover: #059669;
+            --trade-red: #ef4444;   /* Rouge bougie baissière */
+            --border-color: #1e293b;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             line-height: 1.6;
@@ -41,105 +42,144 @@
             padding: 20px 0;
             display: flex;
             justify-content: center;
-            background-color: var(--white);
+            background-color: var(--bg-dark);
             border-bottom: 1px solid var(--border-color);
         }
         
         .logo-text {
             font-size: 24px;
             font-weight: 800;
-            color: var(--text-dark);
+            color: var(--text-light);
             letter-spacing: -0.5px;
+            text-transform: uppercase;
         }
 
         /* HERO SECTION */
         .hero {
             text-align: center;
-            padding: 60px 0 40px;
+            padding: 80px 0 60px;
         }
 
         h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--text-dark);
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--text-light);
             font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .h1-highlight {
-            color: var(--primary-blue);
+            color: var(--trade-green);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 40px;
+        }
+
+        /* BUTTONS */
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: var(--trade-green);
+            color: #000;
+            border: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .cta-button:hover { 
+            background-color: var(--trade-green-hover); 
+            transform: translateY(-2px);
         }
 
         /* PAIN POINTS (RETAIL) */
         .pain-points {
-            background-color: var(--white);
-            padding: 50px 20px;
-            border-radius: 12px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            background-color: var(--bg-card);
+            padding: 50px 40px;
+            border-radius: 8px;
+            margin-bottom: 60px;
             border: 1px solid var(--border-color);
             text-align: center;
         }
 
-        .pain-points h2 { color: #d32f2f; margin-top: 0;}
+        .pain-points h2 { 
+            color: var(--trade-red); 
+            margin-top: 0;
+            font-size: 2rem;
+        }
         
         .pain-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .pain-card {
-            padding: 20px;
-            background: #fff5f5;
-            border-radius: 8px;
-            border-left: 4px solid #d32f2f;
+            padding: 30px;
+            background: rgba(239, 68, 68, 0.05);
+            border-radius: 6px;
+            border-top: 3px solid var(--trade-red);
             text-align: left;
+        }
+
+        .pain-card strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
         }
 
         /* POURQUOI LA SMC */
         .smc-advantage {
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
         }
-        .smc-advantage h2 { font-size: 2.2rem; }
+        .smc-advantage h2 { font-size: 2.4rem; margin-bottom: 20px; }
 
         /* CE QUE VOUS ALLEZ APPRENDRE */
         .learning-section {
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin: 40px 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
+            background-color: var(--bg-card);
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 40px 0 60px;
+            text-align: center;
         }
 
-        .learning-content { flex: 1; min-width: 300px; }
-        
         .check-list {
             list-style: none;
             padding: 0;
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: left;
         }
 
         .check-list li {
             position: relative;
-            padding-left: 35px;
-            margin-bottom: 15px;
+            padding-left: 40px;
+            margin-bottom: 20px;
             font-size: 1.1rem;
-            font-weight: 500;
+            color: var(--text-light);
         }
 
         .check-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            top: 0;
-            color: var(--white);
-            background-color: var(--primary-blue);
+            top: -2px;
+            color: #000;
+            background-color: var(--trade-green);
             width: 24px;
             height: 24px;
             border-radius: 50%;
@@ -147,137 +187,156 @@
             align-items: center;
             justify-content: center;
             font-size: 14px;
-        }
-
-        /* FORMULAIRE & LEAD MAGNET INTRO */
-        .form-section {
-            background-color: #f1f5f9;
-            padding: 40px;
-            border-radius: 12px;
-            flex: 1;
-            min-width: 300px;
-            border: 1px solid #cbd5e1;
-        }
-
-        input {
-            width: 100%;
-            padding: 16px;
-            margin-bottom: 15px;
-            background: var(--white);
-            border: 1px solid #ccc;
-            color: var(--text-dark);
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 1rem;
-        }
-
-        .cta-button {
-            width: 100%;
-            padding: 18px;
-            background-color: var(--primary-blue);
-            color: var(--white);
-            border: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
         }
-
-        .cta-button:hover { background-color: var(--primary-hover); }
 
         /* ÉTAPES SUIVANTES */
         .steps-section {
-            padding: 50px 0;
+            padding: 60px 0;
             text-align: center;
         }
         
         .steps-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .step-box {
-            background: var(--white);
-            padding: 30px 20px;
-            border-radius: 8px;
-            width: 250px;
+            background: var(--bg-card);
+            padding: 40px 25px;
+            border-radius: 6px;
+            width: 260px;
             border: 1px solid var(--border-color);
-            position: relative;
         }
 
         .step-number {
-            background: var(--primary-blue);
-            color: var(--white);
-            width: 30px;
-            height: 30px;
+            background: var(--trade-green);
+            color: #000;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            margin-bottom: 15px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
         }
 
-        /* SOCIAL PROOF */
+        /* SOCIAL PROOF (REVIEWS) */
         .proof-section {
-            padding: 50px 0;
+            padding: 60px 0;
         }
 
         .proof-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .review-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 10px;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         .review-header {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .avatar {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-blue);
-            color: white;
+            width: 45px;
+            height: 45px;
+            background: var(--border-color);
+            color: var(--text-light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            font-size: 1.2rem;
         }
 
-        .stars { color: #f5b301; letter-spacing: 2px;}
+        .stars { color: var(--trade-green); letter-spacing: 2px; font-size: 1.2rem;}
 
         /* FOOTER */
         footer {
-            padding: 40px 20px;
-            background: #1a1a1a;
-            color: #888;
+            padding: 50px 20px;
+            background: #05070a;
+            color: #64748b;
             text-align: center;
             font-size: 12px;
+            border-top: 1px solid var(--border-color);
         }
 
         .disclaimer { max-width: 800px; margin: 0 auto; line-height: 1.6; }
 
+        /* MODAL (POPUP FORMULAIRE) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 450px;
+            position: relative;
+            text-align: center;
+        }
+
+        .close-btn {
+            color: var(--text-muted);
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover { color: var(--text-light); }
+
+        .modal input {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 15px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .modal input:focus {
+            outline: none;
+            border-color: var(--trade-green);
+        }
+
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .learning-section { flex-direction: column; padding: 20px; }
+            h1 { font-size: 2.2rem; }
+            .hero { padding: 40px 0; }
         }
     </style>
 </head>
@@ -286,84 +345,75 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header>
-        <div class="logo-text">KASPER TRADING ACADÉMIE</div>
+        <div class="logo-text">KTA</div>
     </header>
 
     <div class="container">
         
         <section class="hero">
-            <h1>Décryptez les Flux Institutionnels et <span class="h1-highlight">Prenez l'Avantage</span> sur les Marchés.</h1>
-            <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 0 auto;">Arrêtez de trader contre les banques. Téléchargez le guide stratégique SMC et découvrez la méthodologie d'analyse qui élimine le bruit graphique.</p>
+            <h1>Maîtrisez la Lecture Brute du Prix. <br><span class="h1-highlight">Oubliez le Bruit.</span></h1>
+            <p>Le marché n'est pas aléatoire. Il est structuré par la liquidité. Téléchargez le guide d'analyse SMC et passez d'une vision "Retail" à une compréhension technique institutionnelle.</p>
+            <button class="cta-button">ACCÉDER AU GUIDE PDF</button>
         </section>
 
         <section class="pain-points">
-            <h2>Pourquoi 90% des traders retail échouent-ils ?</h2>
+            <h2>L'Illusion de l'Analyse Classique</h2>
             <div class="pain-grid">
                 <div class="pain-card">
-                    <strong>Le piège des indicateurs</strong><br>
-                    Le RSI et le MACD sont programmés pour être en retard sur le prix réel. Ils vous font entrer quand le mouvement est déjà terminé.
+                    <strong>Le Piège des Indicateurs</strong>
+                    Ils sont mathématiquement calculés sur le passé. Quand le RSI vous dit d'acheter, le mouvement principal est déjà terminé. Vous entrez toujours trop tard.
                 </div>
                 <div class="pain-card">
-                    <strong>La chasse aux Stop-Loss</strong><br>
-                    Vos zones de support/résistance classiques sont exactement les zones où l'algorithme bancaire vient chercher de la liquidité.
+                    <strong>La Chasse à la Liquidité</strong>
+                    Vos zones de support et résistance évidentes sont les cibles exactes de l'algorithme pour déclencher vos Stop-Loss avant de repartir dans le bon sens.
                 </div>
             </div>
         </section>
 
         <section class="smc-advantage">
-            <h2 style="margin-bottom: 10px;">Le Mécanisme de l'Avantage Institutionnel</h2>
-            <p style="max-width: 800px; margin: 0 auto; color: var(--text-gray); font-size: 1.1rem;">
-                La Smart Money Concept (SMC) n'est pas une simple stratégie, c'est la lecture brute de l'algorithme de livraison des prix. En comprenant où se trouve la véritable liquidité (Order Blocks, FVG, Inducement), vous ne subissez plus le marché : vous opérez avec un avantage mathématique et institutionnel clair.
+            <h2>La Logique de l'Action des Prix</h2>
+            <p style="max-width: 800px; margin: 0 auto; color: var(--text-muted); font-size: 1.15rem;">
+                La Smart Money Concept (SMC) élimine les suppositions. En apprenant à identifier les Order Blocks, les Imbalances (FVG) et la structure interne du marché, vous n'anticipez plus aveuglément : vous lisez l'empreinte laissée par les volumes institutionnels.
             </p>
+            <br>
+            <button class="cta-button">TÉLÉCHARGER LA MÉTHODE</button>
         </section>
 
         <section class="learning-section">
-            <div class="learning-content">
-                <h2 style="margin-top: 0;">Ce que vous allez apprendre dans ce guide :</h2>
-                <ul class="check-list">
-                    <li>Une stratégie qui permet d'identifier l'intention réelle du marché.</li>
-                    <li>Comment analyser un graphique vierge (Price Action pur).</li>
-                    <li>Pourquoi 95% des indicateurs traditionnels vous font perdre.</li>
-                    <li>Mon plan de structuration pour repérer les manipulations de liquidité.</li>
-                </ul>
-            </div>
-
-            <div class="form-section">
-                <h3 style="margin-top: 0; text-align: center;">Recevoir le Guide PDF Gratuit</h3>
-                <p style="font-size: 0.9rem; text-align: center; color: var(--text-gray); margin-bottom: 20px;">Remplissez ce formulaire pour recevoir votre exemplaire directement par email.</p>
-                
-                <form action="VOTRE_PAGE_DE_REMERCIEMENT_TELEGRAM.html" method="GET">
-                    <input type="text" placeholder="Votre prénom" required>
-                    <input type="email" placeholder="Votre adresse email" required>
-                    <button type="submit" class="cta-button">TÉLÉCHARGER LE GUIDE</button>
-                </form>
-                <p style="font-size: 11px; color: #777; text-align: center; margin-top: 15px;">Vos données sont sécurisées. En validant, vous acceptez de recevoir nos communications éducatives.</p>
-            </div>
+            <h2 style="margin-top: 0;">Ce que contient ce guide technique :</h2>
+            <ul class="check-list">
+                <li>Le décodage d'un graphique nu (Price Action pur).</li>
+                <li>Comment identifier les vraies zones d'intervention (Order Blocks).</li>
+                <li>La méthode pour repérer et éviter les manipulations de liquidité.</li>
+                <li>Le plan de structuration d'une analyse Top-Down (Multi-Timeframe).</li>
+            </ul>
         </section>
 
         <section class="steps-section">
-            <h2>Vos prochaines étapes</h2>
+            <h2>Le Plan d'Action KTA</h2>
             <div class="steps-container">
                 <div class="step-box">
                     <div class="step-number">1</div>
-                    <h4 style="margin: 0 0 10px 0;">Récupérez le Guide</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-gray);">Ouvrez votre boîte mail et lisez le PDF pour assimiler les bases de l'analyse institutionnelle.</p>
+                    <h4 style="margin: 0 0 10px 0; color: var(--text-light);">La Théorie</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Récupérez le PDF et assimilez le vocabulaire et les concepts techniques fondamentaux de la SMC.</p>
                 </div>
                 <div class="step-box">
                     <div class="step-number">2</div>
-                    <h4 style="margin: 0 0 10px 0;">Rejoignez le Canal</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-gray);">Cliquez sur le lien sécurisé envoyé par email pour accéder au groupe Telegram privé.</p>
+                    <h4 style="margin: 0 0 10px 0; color: var(--text-light);">L'Immersion</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Utilisez le lien privé reçu par email pour accéder au canal de suivi analytique Telegram.</p>
                 </div>
                 <div class="step-box">
                     <div class="step-number">3</div>
-                    <h4 style="margin: 0 0 10px 0;">Appliquez la Méthode</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-gray);">Observez les analyses partagées en direct et confrontez la théorie à la réalité des marchés.</p>
+                    <h4 style="margin: 0 0 10px 0; color: var(--text-light);">La Pratique</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Confrontez la théorie à la réalité en suivant nos études de cas et analyses de marché quotidiennes.</p>
                 </div>
             </div>
+            <br><br>
+            <button class="cta-button">COMMENCER L'APPRENTISSAGE</button>
         </section>
 
         <section class="proof-section">
-            <h2 style="text-align: center;">Ceux qui ont fait la transition vers la SMC</h2>
+            <h2 style="text-align: center;">Une transition technique validée</h2>
             <div class="proof-grid">
                 <div class="review-card">
                     <div class="review-header">
@@ -373,7 +423,7 @@
                             <div class="stars">★★★★★</div>
                         </div>
                     </div>
-                    <p style="font-size: 0.95rem; color: var(--text-gray);">"J'ai passé 2 ans à tracer des supports et résistances qui se faisaient exploser. Depuis que j'ai compris comment la liquidité est manipulée, ma vision du graphique a totalement changé. Une masterclass."</p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">"Fini les graphiques illisibles avec 4 indicateurs superposés. La lecture de la liquidité m'a permis de comprendre enfin pourquoi mes stops sautaient systématiquement."</p>
                 </div>
                 
                 <div class="review-card">
@@ -384,7 +434,7 @@
                             <div class="stars">★★★★★</div>
                         </div>
                     </div>
-                    <p style="font-size: 0.95rem; color: var(--text-gray);">"Contenu dense et sans fioritures. Kasper explique exactement pourquoi les retailers se font sortir. C'est l'approche la plus pragmatique que j'ai pu lire. Merci pour la valeur."</p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">"Un condensé technique redoutable. Kasper va droit au but, explique la mécanique des Order Blocks de manière rationnelle. C'est du concret."</p>
                 </div>
 
                 <div class="review-card">
@@ -395,18 +445,60 @@
                             <div class="stars">★★★★★</div>
                         </div>
                     </div>
-                    <p style="font-size: 0.95rem; color: var(--text-gray);">"Le guide permet vraiment de nettoyer son graphique de tous les indicateurs parasites. J'applique désormais le price action pur et mes entrées sont devenues chirurgicales."</p>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">"Le guide pose des bases saines. La transition vers le Price Action pur est difficile au début, mais l'approche structurelle de KTA rend ça logique."</p>
                 </div>
             </div>
         </section>
 
     </div>
 
+    <div id="leadModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 style="margin-top: 0; font-size: 1.5rem;">Où envoyer le guide ?</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 25px;">Saisissez vos informations pour recevoir votre accès instantané par email.</p>
+            
+            <form action="VOTRE_PAGE_DE_REMERCIEMENT_TELEGRAM.html" method="GET">
+                <input type="text" placeholder="Votre prénom" required>
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">RECEVOIR LE PDF</button>
+            </form>
+            <p style="font-size: 11px; color: #475569; margin-top: 20px;">Accès sécurisé. Vous acceptez de recevoir nos emails éducatifs (désinscription en 1 clic).</p>
+        </div>
+    </div>
+
     <footer>
         <div class="disclaimer">
-            <p><strong>Avertissement sur les risques :</strong> La KTA (Kasper Trading Academy) est une plateforme strictement éducative. Nous ne fournissons aucun conseil en investissement personnalisé, ni de services de gestion de portefeuilles. Le trading de CFD, du Forex et des cryptomonnaies comporte un niveau de risque élevé et peut ne pas convenir à tous les investisseurs. Vous pouvez subir la perte d'une partie ou de la totalité de votre capital initial.</p>
+            <p><strong>Avertissement sur les risques :</strong> La KTA (Kasper Trading Academy) est une plateforme strictement éducative. Nous ne fournissons aucun conseil en investissement personnalisé, ni de services de gestion de portefeuilles. Le trading de CFD, du Forex et des cryptomonnaies comporte un niveau de risque élevé et peut ne pas convenir à tous les investisseurs. Les performances passées ne garantissent pas les résultats futurs.</p>
             <p>&copy; 2024 Kasper Trading Academy. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <script>
+        const modal = document.getElementById("leadModal");
+        const btns = document.querySelectorAll(".cta-button");
+        const span = document.getElementsByClassName("close-btn")[0];
+
+        // Ouvrir la modal au clic sur n'importe quel bouton CTA
+        btns.forEach(btn => {
+            if(btn.type !== "submit") { // Exclure le bouton de soumission du formulaire lui-même
+                btn.onclick = function() {
+                    modal.style.display = "flex";
+                }
+            }
+        });
+
+        // Fermer au clic sur la croix
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Fermer au clic en dehors de la modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
