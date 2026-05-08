@@ -43,7 +43,7 @@
             padding: 0 24px;
         }
 
-        /* HEADER REMIS EN HAUT */
+        /* HEADER */
         header {
             padding: 25px 0;
             display: flex;
@@ -71,7 +71,7 @@
             font-weight: 600;
         }
 
-        /* NOUVELLE SECTION HERO BANNER (TOP) */
+        /* HERO BANNER TOP */
         .hero-banner-top {
             position: relative;
             width: 100%;
@@ -124,7 +124,7 @@
             letter-spacing: 2px;
         }
 
-        /* HERO SECTION CLASSIC */
+        /* HERO SECTION */
         .hero {
             display: flex;
             align-items: center;
@@ -173,7 +173,6 @@
             font-weight: 500;
         }
 
-        /* PLACEHOLDER VISUELS */
         .img-placeholder {
             width: 100%;
             max-width: 380px;
@@ -223,6 +222,8 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             box-shadow: 0 4px 25px rgba(0, 255, 136, 0.3);
+            text-decoration: none;
+            text-align: center;
         }
 
         .cta-button:hover { 
@@ -231,7 +232,7 @@
             box-shadow: 0 6px 30px rgba(0, 255, 136, 0.5);
         }
 
-        /* SECTION PAIN POINTS */
+        /* PAIN POINTS */
         .pain-section {
             padding: 80px 0;
             border-top: 1px solid var(--border-color);
@@ -280,7 +281,7 @@
             margin-bottom: 15px;
         }
 
-        /* --- SECTION: CE QUE VOUS ALLEZ APPRENDRE --- */
+        /* LEARN SECTION */
         .learn-section {
             padding: 80px 0;
             border-top: 1px solid var(--border-color);
@@ -328,7 +329,7 @@
             line-height: 1.6;
         }
 
-        /* SECTION POURQUOI LA SMC */
+        /* SMC SECTION */
         .smc-section {
             padding: 100px 0;
             background: radial-gradient(circle at center, rgba(0, 255, 136, 0.03) 0%, transparent 70%);
@@ -348,7 +349,7 @@
             justify-content: center;
         }
 
-        /* SECTION APPRENDRE & FORMULAIRE INTÉGRÉ */
+        /* CONVERSION SECTION */
         .conversion-section {
             padding: 100px 0;
             border-top: 1px solid var(--border-color);
@@ -393,7 +394,6 @@
             font-weight: bold;
         }
 
-        /* BLOC FORMULAIRE IMMÉDIAT */
         .form-box {
             background-color: var(--bg-card);
             border: 1px solid var(--trade-green);
@@ -484,7 +484,7 @@
             font-weight: 800;
         }
 
-        /* ÉTAPES SUIVANTES */
+        /* STEPS SECTION */
         .steps-section {
             padding: 100px 0;
             border-top: 1px solid var(--border-color);
@@ -524,6 +524,59 @@
             margin-bottom: 25px;
         }
 
+        /* --- NOUVELLE SECTION AJUSTÉE (CAPTURE D'ÉCRAN) --- */
+        .action-section {
+            padding: 100px 0;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-pure-black);
+        }
+
+        .action-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--trade-green);
+            border-radius: 20px;
+            padding: 80px 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.05);
+        }
+
+        .action-box h2 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .action-box p {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .action-list-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 45px;
+        }
+
+        .action-list-wrapper .check-list {
+            margin-top: 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .action-list-wrapper .check-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
         /* SOCIAL PROOF */
         .proof-section {
             padding: 100px 0;
@@ -549,7 +602,7 @@
             gap: 30px;
         }
 
-        .review-card-horizontal img, .review-avatar-placeholder {
+        .review-avatar-placeholder {
             width: 80px;
             height: 80px;
             border-radius: 50%;
@@ -607,7 +660,7 @@
             .conversion-grid { grid-template-columns: 1fr; gap: 40px; }
             .hero-banner-content h1 { font-size: 2.5rem; }
             .review-card-horizontal { flex-direction: column; text-align: center; }
-            .trust-icon-text { justify-content: center; width: 100%; }
+            .action-box h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -792,6 +845,21 @@
             </div>
         </section>
 
+        <section class="action-section">
+            <div class="action-box">
+                <h2>PASSEZ À L'ACTION</h2>
+                <p>Il est temps d'arrêter de deviner et de commencer à comprendre.</p>
+                <div class="action-list-wrapper">
+                    <ul class="check-list">
+                        <li>Arrêtez d'être la liquidité des institutions.</li>
+                        <li>Adoptez une lecture de prix objective et mécanique.</li>
+                        <li>Rejoignez une élite de traders disciplinés.</li>
+                    </ul>
+                </div>
+                <button class="cta-button" onclick="scrollToForm()" style="width: 100%; max-width: 450px;">RÉCUPÉRER MON GUIDE OFFERT</button>
+            </div>
+        </section>
+
         <section class="proof-section">
             <div class="section-header">
                 <h2>ILS ONT CHOISI LA MÉTHODE KTA</h2>
@@ -829,8 +897,16 @@
 
     <footer>
         <div class="disclaimer">
-            <p><strong>Avertissement sur les risques réglementaires :</strong> La KTA (Kasper Trading Academy) est une académie à vocation strictement éducative. Nous ne fournissons aucun conseil en investissement personnalisé, ni de service</p>
+            <p><strong>Avertissement sur les risques réglementaires :</strong> La KTA (Kasper Trading Academy) est une académie à vocation strictement éducative. Nous ne fournissons aucun conseil en investissement personnalisé, ni de service.</p>
         </div>
     </footer>
+
+    <script>
+        function scrollToForm() {
+            document.getElementById('target-form-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
