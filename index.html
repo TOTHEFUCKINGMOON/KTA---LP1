@@ -17,9 +17,9 @@
             --bg-card: #111115;
             --text-light: #ffffff;
             --text-muted: #8e8e93;
-            --trade-green: #00ff88; /* Vert néon ultra-pro */
+            --trade-green: #00ff88;
             --trade-green-hover: #00cc6a;
-            --trade-red: #ff3333;   /* Rouge dynamique */
+            --trade-red: #ff3333;
             --border-color: #22222a;
             --glow-green: rgba(0, 255, 136, 0.15);
         }
@@ -43,7 +43,35 @@
             padding: 0 24px;
         }
 
-        /* --- NOUVELLE SECTION HERO BANNER (TOP) --- */
+        /* HEADER REMIS EN HAUT */
+        header {
+            padding: 25px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-pure-black);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .logo-text {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        .badge-trust {
+            font-size: 14px;
+            color: var(--trade-green);
+            border: 1px solid var(--trade-green);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        /* NOUVELLE SECTION HERO BANNER (TOP) */
         .hero-banner-top {
             position: relative;
             width: 100%;
@@ -85,6 +113,7 @@
             margin-bottom: 10px;
             line-height: 1;
             text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            color: var(--text-light);
         }
 
         .hero-banner-content p {
@@ -93,32 +122,6 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-        }
-
-        /* HEADER */
-        header {
-            padding: 25px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--bg-pure-black);
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .logo-text {
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--text-light);
-            letter-spacing: 1px;
-        }
-
-        .badge-trust {
-            font-size: 14px;
-            color: var(--trade-green);
-            border: 1px solid var(--trade-green);
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-weight: 600;
         }
 
         /* HERO SECTION CLASSIC */
@@ -158,6 +161,16 @@
             font-size: 1.25rem;
             color: var(--text-muted);
             margin-bottom: 40px;
+        }
+
+        .trust-icon-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         /* PLACEHOLDER VISUELS */
@@ -267,6 +280,52 @@
             margin-bottom: 15px;
         }
 
+        /* --- NOUVELLE SECTION: CE QUE TU VAS DÉCOUVRIR --- */
+        .discover-section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-dark-gray);
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .discover-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            border-radius: 12px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .discover-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--trade-green);
+        }
+
+        .discover-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .discover-card h3 {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .discover-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin: 0;
+        }
+
         /* SECTION POURQUOI LA SMC */
         .smc-section {
             padding: 100px 0;
@@ -373,7 +432,7 @@
             border-color: var(--trade-green);
         }
 
-        /* --- NOUVELLE SECTION RECRÉÉE CAPTURE 1 --- */
+        /* PROGRAM SECTION */
         .program-section {
             padding: 100px 0;
             background-color: var(--bg-pure-black);
@@ -463,7 +522,7 @@
             margin-bottom: 25px;
         }
 
-        /* --- NOUVELLE SECTION SOCIAL PROOF RECRÉÉE CAPTURE 2 --- */
+        /* SOCIAL PROOF */
         .proof-section {
             padding: 100px 0;
             border-top: 1px solid var(--border-color);
@@ -546,22 +605,13 @@
             .conversion-grid { grid-template-columns: 1fr; gap: 40px; }
             .hero-banner-content h1 { font-size: 2.5rem; }
             .review-card-horizontal { flex-direction: column; text-align: center; }
+            .trust-icon-text { justify-content: center; width: 100%; }
         }
     </style>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-    <section class="hero-banner-top">
-        <div class="banner-placeholder">
-            <div class="hero-banner-content">
-                <h1>MAÎTRISEZ LA LECTURE BRUTE DU PRIX. <br><span style="color: var(--trade-green);">ÉLIMINEZ LE BRUIT.</span></h1>
-                <p>Votre Guide PDF Offert est servi sur un plateau ici.</p>
-                <button class="cta-button" onclick="scrollToForm()" style="margin-top: 30px;">DÉCOUVRIR LE GUIDE MAINTENANT</button>
-            </div>
-        </div>
-    </section>
 
     <header>
         <div class="container" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
@@ -570,13 +620,31 @@
         </div>
     </header>
 
+    <section class="hero-banner-top">
+        <div class="banner-placeholder">
+            <div class="hero-banner-content">
+                <h1>TÉLÉCHARGE TON <span style="color: var(--trade-green);">GUIDE SMC</span> DÈS MAINTENANT</h1>
+                <p>La lecture brute du prix servie sur un plateau.</p>
+                <button class="cta-button" onclick="scrollToForm()" style="margin-top: 30px;">RÉCUPÈRE TON GUIDE OFFERT</button>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 15px; color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--trade-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    Aucune expérience nécessaire
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
         
         <section class="hero">
             <div class="hero-text">
-                <h1>Maîtrisez la Lecture Brute du Prix. <span class="h1-highlight">Éliminez le Bruit.</span></h1>
+                <h1>Obtiens Ton <span class="h1-highlight">Guide SMC</span> Gratuit</h1>
                 <p>Le marché n'est pas aléatoire. Il est structuré par la recherche de contreparties institutionnelles. Téléchargez le guide d'analyse SMC complet et apprenez à cartographier les volumes comme les teneurs de marché.</p>
-                <button class="cta-button" onclick="scrollToForm()">RECEVOIR LE GUIDE TECHNIQUE</button>
+                <button class="cta-button" onclick="scrollToForm()">RÉCUPÈRE TON GUIDE OFFERT</button>
+                <div class="trust-icon-text">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--trade-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    Aucune expérience nécessaire
+                </div>
             </div>
             <div class="hero-visual">
                 <div class="img-placeholder">
@@ -603,6 +671,35 @@
             </div>
         </section>
 
+        <section class="discover-section">
+            <div class="section-header">
+                <h2>CE QUE TU VAS DÉCOUVRIR DANS TON GUIDE</h2>
+                <p style="color: var(--text-muted);">Les piliers fondamentaux de la méthode institutionnelle</p>
+            </div>
+            <div class="discover-grid">
+                <div class="discover-card">
+                    <div class="discover-icon">🎯</div>
+                    <h3>La Lecture Brute Du Prix</h3>
+                    <p>Le marché n'est pas aléatoire. Il est structuré par la recherche de contreparties. Apprends à cartographier les volumes comme les teneurs de marché.</p>
+                </div>
+                <div class="discover-card">
+                    <div class="discover-icon">⚡</div>
+                    <h3>Détecter Les Manipulations</h3>
+                    <p>Comprends pourquoi les zones de support et de résistance classiques sont des cibles parfaites pour les algorithmes et comment les éviter systématiquement.</p>
+                </div>
+                <div class="discover-card">
+                    <div class="discover-icon">🛡️</div>
+                    <h3>Entrées Chirurgicales</h3>
+                    <p>Découvre comment identifier l'origine réelle d'une impulsion avec les Order Blocks pour des entrées au millimètre avec un risque minimal.</p>
+                </div>
+                <div class="discover-card">
+                    <div class="discover-icon">📊</div>
+                    <h3>L'Avantage Statistique</h3>
+                    <p>En repérant les déséquilibres (Imbalances) et les zones institutionnelles, tu arrêtes de deviner et tu suis la trace des capitaux intelligents.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="smc-section">
             <div class="smc-visual">
                 <div class="img-placeholder" style="height: 350px;">
@@ -615,7 +712,7 @@
                 <p style="color: var(--text-muted); font-size: 1.15rem; margin-bottom: 30px;">
                     La Smart Money Concept (SMC) n'invente rien : elle traduit la logique de livraison des prix des algorithmes bancaires. En repérant les déséquilibres (Imbalances) et les zones de décision institutionnelles (Order Blocks), vous arrêtez de chercher à deviner l'avenir. Vous suivez simplement la trace des capitaux.
                 </p>
-                <button class="cta-button" onclick="scrollToForm()">OBTENIR VOTRE AVANTAGE</button>
+                <button class="cta-button" onclick="scrollToForm()">RÉCUPÈRE TON GUIDE OFFERT</button>
             </div>
         </section>
 
@@ -638,7 +735,7 @@
                     <form action="VOTRE_PAGE_DE_REMERCIEMENT_TELEGRAM.html" method="GET">
                         <input type="text" placeholder="Votre prénom" required>
                         <input type="email" placeholder="Votre adresse email" required>
-                        <button type="submit" class="cta-button" style="width: 100%;">RECEVOIR LE GUIDE PDF</button>
+                        <button type="submit" class="cta-button" style="width: 100%;">RÉCUPÉRER MON GUIDE OFFERT</button>
                     </form>
                     
                     <p style="font-size: 11px; color: #444455; margin-top: 15px; margin-bottom: 0;">En soumettant ce formulaire, vous acceptez nos conditions d'accès éducatif. Désinscription en 1 clic.</p>
@@ -682,13 +779,12 @@
                 <div class="step-card">
                     <div class="step-badge">2</div>
                     <h3 style="margin-top: 0; font-size: 1.3rem;">Suivi Quotidien</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">2 : Connectez-vous à la Kasper Trading Académie en récupérant votre accès privilégié directement dans l’email contenant votre guide PDF offert pour observer l'application directe des concepts.</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">Connectez-vous à la Kasper Trading Académie en récupérant votre accès privilégié directement dans l’email contenant votre guide PDF offert pour observer l'application directe des concepts.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-badge">3</div>
                     <h3 style="margin-top: 0; font-size: 1.3rem;">L'Écosystème KTA (La Pratique)</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">Confrontez vos analyses personnelles aux études de cas partagées et participer à nos sessions en live chaque jour de la semaine pour calibrer votre vision du marché.
-</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">Confrontez vos analyses personnelles aux études de cas partagées et participez à nos sessions en live chaque jour de la semaine pour calibrer votre vision du marché.</p>
                 </div>
             </div>
         </section>
