@@ -43,6 +43,58 @@
             padding: 0 24px;
         }
 
+        /* --- NOUVELLE SECTION HERO BANNER (TOP) --- */
+        .hero-banner-top {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            min-height: 400px;
+            background-color: #050505;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 2px solid var(--trade-green);
+        }
+
+        .banner-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('votre-image-banniere.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-banner-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-banner-content h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            line-height: 1;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-banner-content p {
+            font-size: 1.5rem;
+            color: var(--trade-green);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
         /* HEADER */
         header {
             padding: 25px 0;
@@ -69,7 +121,7 @@
             font-weight: 600;
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION CLASSIC */
         .hero {
             display: flex;
             align-items: center;
@@ -321,6 +373,56 @@
             border-color: var(--trade-green);
         }
 
+        /* --- NOUVELLE SECTION RECRÉÉE CAPTURE 1 --- */
+        .program-section {
+            padding: 100px 0;
+            background-color: var(--bg-pure-black);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .program-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--trade-green);
+        }
+
+        .program-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #0a0a0c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .program-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .program-content h4 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: var(--trade-green);
+            margin: 0;
+            font-weight: 800;
+        }
+
         /* ÉTAPES SUIVANTES */
         .steps-section {
             padding: 100px 0;
@@ -361,50 +463,64 @@
             margin-bottom: 25px;
         }
 
-        /* SOCIAL PROOF */
+        /* --- NOUVELLE SECTION SOCIAL PROOF RECRÉÉE CAPTURE 2 --- */
         .proof-section {
             padding: 100px 0;
             border-top: 1px solid var(--border-color);
+            background-color: var(--bg-dark-gray);
         }
 
-        .proof-grid {
+        .proof-grid-recreated {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 900px;
+            margin: 50px auto 0;
         }
 
-        .review-card {
+        .review-card-horizontal {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 35px;
+            padding: 30px;
             border-radius: 12px;
-        }
-
-        .review-user {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 30px;
         }
 
-        .avatar-placeholder {
-            width: 48px;
-            height: 48px;
-            background-color: #22222a;
+        .review-card-horizontal img, .review-avatar-placeholder {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
+            background-color: var(--bg-pure-black);
+            border: 1px solid var(--trade-green);
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.1rem;
             color: var(--trade-green);
         }
 
-        .stars {
+        .review-content-recreated {
+            flex-grow: 1;
+        }
+
+        .review-content-recreated p {
+            font-style: italic;
+            color: var(--text-light);
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .review-author-recreated {
+            font-weight: bold;
             color: var(--trade-green);
-            letter-spacing: 2px;
-            margin-top: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         /* FOOTER */
@@ -428,12 +544,24 @@
             .hero-visual { order: -1; }
             .smc-section { flex-direction: column; text-align: center; }
             .conversion-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-banner-content h1 { font-size: 2.5rem; }
+            .review-card-horizontal { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <section class="hero-banner-top">
+        <div class="banner-placeholder">
+            <div class="hero-banner-content">
+                <h1>MAÎTRISEZ LA LECTURE BRUTE DU PRIX. <br><span style="color: var(--trade-green);">ÉLIMINEZ LE BRUIT.</span></h1>
+                <p>Votre Guide PDF Offert est servi sur un plateau ici.</p>
+                <button class="cta-button" onclick="scrollToForm()" style="margin-top: 30px;">DÉCOUVRIR LE GUIDE MAINTENANT</button>
+            </div>
+        </div>
+    </section>
 
     <header>
         <div class="container" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
@@ -518,6 +646,31 @@
             </div>
         </section>
 
+        <section class="program-section">
+            <div class="section-header">
+                <h2>AU DELÀ DU GUIDE : L'ÉCOSYSTÈME KTA</h2>
+                <p style="color: var(--text-muted);">Une immersion totale dans le trading institutionnel.</p>
+            </div>
+            <div class="program-grid">
+                <div class="program-card">
+                    <div class="program-img-placeholder">PHOTO FORMATION</div>
+                    <div class="program-content"><h4>Formation</h4></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img-placeholder">PHOTO SESSIONS LIVE</div>
+                    <div class="program-content"><h4>Sessions Live</h4></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img-placeholder">PHOTO ANALYSES</div>
+                    <div class="program-content"><h4>Analyses</h4></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img-placeholder">PHOTO COMMUNAUTÉ</div>
+                    <div class="program-content"><h4>Communauté</h4></div>
+                </div>
+            </div>
+        </section>
+
         <section class="steps-section">
             <h2 style="font-size: 2.5rem;">Votre Protocole d'Intégration</h2>
             <div class="steps-grid">
@@ -541,45 +694,33 @@
 
         <section class="proof-section">
             <div class="section-header">
-                <h2>L'Évaluation de notre Communauté</h2>
-                <p style="color: var(--text-muted);">Ils ont abandonné les indicateurs classiques pour se concentrer sur l'ordre des flux.</p>
+                <h2>ILS ONT CHOISI LA MÉTHODE KTA</h2>
+                <p style="color: var(--text-muted);">Témoignages réels de membres de l'académie.</p>
             </div>
-            <div class="proof-grid">
-                <div class="review-card">
-                    <div class="review-user">
-                        <div class="avatar-placeholder">TL</div>
-                        <div>
-                            <div style="font-weight: bold;">Thomas L.</div>
-                            <div class="stars">★★★★★</div>
-                        </div>
+            
+            <div class="proof-grid-recreated">
+                <div class="review-card-horizontal">
+                    <div class="review-avatar-placeholder">JR</div>
+                    <div class="review-content-recreated">
+                        <p>"Une clarté d'esprit enfin retrouvée sur les marchés. Kasper ne vend pas de rêve, il vend de la technique pure."</p>
+                        <div class="review-author-recreated">Jonathan R. <span style="color: var(--trade-green);">★★★★★</span></div>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">"Après deux ans passés à voir mes stop-loss se faire liquider de manière chirurgicale, la compréhension de la structure institutionnelle m'a enfin permis d'anticiper les vrais mouvements. Le guide pose des bases redoutables."</p>
-                </div>
-                
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-user" style="margin-bottom: 0;">
-                            <div class="avatar-placeholder">MD</div>
-                            <div>
-                                <div style="font-weight: bold;">Marc D.</div>
-                                <div class="stars">★★★★★</div>
-                            </div>
-                        </div>
-                    </div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">"Ce n'est pas de la magie ou de la prédiction, c'est de la logique de flux pure. Kasper explique clairement pourquoi les règles du retail ne fonctionnent plus sur les marchés actuels. Un excellent point d'entrée."</p>
                 </div>
 
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-user" style="margin-bottom: 0;">
-                            <div class="avatar-placeholder">AP</div>
-                            <div>
-                                <div style="font-weight: bold;">Antoine P.</div>
-                                <div class="stars">★★★★★</div>
-                            </div>
-                        </div>
+                <div class="review-card-horizontal">
+                    <div class="review-avatar-placeholder">SM</div>
+                    <div class="review-content-recreated">
+                        <p>"Passer de l'analyse retail à la SMC a été le déclic. Ce guide est le meilleur point de départ possible."</p>
+                        <div class="review-author-recreated">Sarah M. <span style="color: var(--trade-green);">★★★★★</span></div>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">"Apprendre à analyser un graphique nu change absolument tout. Le contenu théorique proposé par KTA est structuré, technique, et immédiatement exploitable pour ceux qui veulent comprendre le prix."</p>
+                </div>
+
+                <div class="review-card-horizontal">
+                    <div class="review-avatar-placeholder">DK</div>
+                    <div class="review-content-recreated">
+                        <p>"La psychologie et la gestion du risque sont au cœur de la KTA. Un contenu d'une valeur inestimable."</p>
+                        <div class="review-author-recreated">David K. <span style="color: var(--trade-green);">★★★★★</span></div>
+                    </div>
                 </div>
             </div>
         </section>
