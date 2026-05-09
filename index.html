@@ -91,7 +91,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('votre-image-banniere.jpg');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('image_a7459b.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -173,39 +173,11 @@
             font-weight: 500;
         }
 
-        /* PLACEHOLDER VISUELS */
-        .img-placeholder {
+        .img-fluid {
             width: 100%;
-            max-width: 380px;
-            height: 480px;
-            background: linear-gradient(135deg, #111115 0%, #000000 100%);
-            border: 2px dashed #333344;
+            height: auto;
             border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: border-color 0.3s;
-        }
-
-        .img-placeholder:hover {
-            border-color: var(--trade-green);
-        }
-
-        .placeholder-title {
-            font-size: 14px;
-            font-weight: bold;
-            color: var(--text-light);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-
-        .placeholder-desc {
-            font-size: 11px;
-            color: var(--text-muted);
+            display: block;
         }
 
         /* BUTTONS */
@@ -321,13 +293,6 @@
             margin-top: 0;
             margin-bottom: 15px;
             text-transform: uppercase;
-        }
-
-        .learn-card p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin: 0;
-            line-height: 1.6;
         }
 
         /* SMC SECTION */
@@ -463,14 +428,17 @@
             border-color: var(--trade-green);
         }
 
-        .program-img-placeholder {
+        .program-img-container {
             width: 100%;
             height: 180px;
-            background-color: #0a0a0c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
             border-bottom: 1px solid var(--border-color);
+        }
+
+        .program-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .program-content {
@@ -508,10 +476,6 @@
             transition: transform 0.3s;
         }
 
-        .step-card:hover {
-            transform: translateY(-5px);
-        }
-
         .step-badge {
             background-color: var(--trade-green);
             color: #000;
@@ -526,7 +490,7 @@
             margin-bottom: 25px;
         }
 
-        /* --- NOUVELLE SECTION EXPERTS --- */
+        /* EXPERTS SECTION */
         .experts-section {
             padding: 100px 0;
             border-top: 1px solid var(--border-color);
@@ -552,24 +516,19 @@
             transition: border-color 0.3s;
         }
 
-        .expert-card:hover {
-            border-color: var(--trade-green);
-        }
-
-        .expert-photo-placeholder {
+        .expert-photo-container {
             width: 100px;
             height: 100px;
             border-radius: 12px;
-            background-color: var(--bg-pure-black);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
             flex-shrink: 0;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
+            border: 1px solid var(--border-color);
+        }
+
+        .expert-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .expert-info h4 {
@@ -587,7 +546,7 @@
             font-size: 1rem;
         }
 
-        /* PROOF SECTION (TESTIMONIALS) */
+        /* PROOF SECTION */
         .proof-section {
             padding: 100px 0;
             border-top: 1px solid var(--border-color);
@@ -712,10 +671,7 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="img-placeholder">
-                    <div class="placeholder-title">Visual 1 : Mockup 3D du PDF</div>
-                    <div class="placeholder-desc">Insérer ici une image transparente en haute résolution montrant une couverture 3D soignée de votre Guide SMC de la KTA.</div>
-                </div>
+                <img src="image_fe337c.png" alt="Mockup Guide KTA" class="img-fluid" style="max-width: 380px;">
             </div>
         </section>
 
@@ -768,10 +724,7 @@
 
         <section class="smc-section">
             <div class="smc-visual">
-                <div class="img-placeholder" style="height: 350px;">
-                    <div class="placeholder-title">Visual 2 : Graphique SMC (TradingView)</div>
-                    <div class="placeholder-desc">Insérer une capture d'écran propre de TradingView en mode sombre, illustrant une liquidation de liquidité suivie d'un Shift structurel majeur.</div>
-                </div>
+                <img src="image_a745f4.png" alt="Graphique SMC" class="img-fluid" style="max-height: 350px;">
             </div>
             <div class="smc-content">
                 <h2 style="font-size: 2.6rem; margin-top: 0; line-height: 1.2;">L'Avantage Statistique de l'Action du Prix</h2>
@@ -797,7 +750,6 @@
                 <div class="form-box">
                     <h3>Télécharger la Méthode</h3>
                     <p>Saisissez vos coordonnées pour recevoir le guide technique directement par email.</p>
-                    
                     <form action="VOTRE_PAGE_DE_REMERCIEMENT_TELEGRAM.html" method="GET">
                         <input type="text" placeholder="Votre prénom" required>
                         <input type="email" placeholder="Votre adresse email" required>
@@ -816,19 +768,27 @@
             </div>
             <div class="program-grid">
                 <div class="program-card">
-                    <div class="program-img-placeholder">PHOTO FORMATION</div>
+                    <div class="program-img-container">
+                        <img src="image_0f7a51.png" alt="Formation KTA">
+                    </div>
                     <div class="program-content"><h4>Formation</h4></div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img-placeholder">PHOTO SESSIONS LIVE</div>
+                    <div class="program-img-container">
+                        <img src="image_a745d5.jpg" alt="Sessions Live KTA">
+                    </div>
                     <div class="program-content"><h4>Sessions Live</h4></div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img-placeholder">PHOTO ANALYSES</div>
+                    <div class="program-img-container">
+                        <img src="image_a7459b.png" alt="Analyses KTA">
+                    </div>
                     <div class="program-content"><h4>Analyses</h4></div>
                 </div>
                 <div class="program-card">
-                    <div class="program-img-placeholder">PHOTO COMMUNAUTÉ</div>
+                    <div class="program-img-container">
+                        <img src="image_a6b753.png" alt="Communauté KTA">
+                    </div>
                     <div class="program-content"><h4>Communauté</h4></div>
                 </div>
             </div>
@@ -862,7 +822,9 @@
             
             <div class="experts-list">
                 <div class="expert-card">
-                    <div class="expert-photo-placeholder">PHOTO KASPER</div>
+                    <div class="expert-photo-container">
+                        <img src="image_a742f1.jpg" alt="Kasper">
+                    </div>
                     <div class="expert-info">
                         <h4>KASPER</h4>
                         <p>Fondateur de la KTA, trader depuis 2017 spécialisé dans l'approche institutionnelle du marché. Sa vision : simplifier la complexité des algorithmes bancaires pour la rendre accessible à tous.</p>
@@ -870,7 +832,9 @@
                 </div>
 
                 <div class="expert-card">
-                    <div class="expert-photo-placeholder">PHOTO ADAM</div>
+                    <div class="expert-photo-container">
+                        <img src="image_a742b3.jpg" alt="Adam">
+                    </div>
                     <div class="expert-info">
                         <h4>ADAM</h4>
                         <p>Expert en psychologie de marché et gestion du risque. Il accompagne les membres dans le renforcement de leur discipline émotionnelle, pilier indispensable de la rentabilité.</p>
@@ -878,7 +842,9 @@
                 </div>
 
                 <div class="expert-card">
-                    <div class="expert-photo-placeholder">PHOTO GAEL</div>
+                    <div class="expert-photo-container">
+                        <img src="image_a6bb0e.jpg" alt="Gael">
+                    </div>
                     <div class="expert-info">
                         <h4>GAEL</h4>
                         <p>Analyste technique spécialisé sur les indices US et le Forex. Maître dans l'art de l'identification des Order Blocks et des liquidités, il partage son oeil d'expert lors des sessions quotidiennes.</p>
