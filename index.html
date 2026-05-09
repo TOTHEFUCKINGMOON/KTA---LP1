@@ -668,6 +668,142 @@
             .review-card-horizontal, .expert-card { flex-direction: column; text-align: center; }
             .trust-icon-text { justify-content: center; width: 100%; }
         }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            header {
+                padding: 16px 0;
+            }
+
+            header .container {
+                flex-direction: column !important;
+                gap: 10px;
+                justify-content: center !important;
+                text-align: center;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            .badge-trust {
+                font-size: 11px;
+                padding: 4px 10px;
+                letter-spacing: 0.2px;
+            }
+
+            .hero-banner-top {
+                min-height: 320px;
+                height: 52vh;
+            }
+
+            .hero-banner-content h1 {
+                font-size: 1.9rem;
+                line-height: 1.15;
+            }
+
+            .hero-banner-content p {
+                font-size: 0.95rem;
+                letter-spacing: 1px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+                letter-spacing: -0.5px;
+            }
+
+            h2, .section-header h2 {
+                font-size: 1.8rem;
+                line-height: 1.25;
+            }
+
+            .hero,
+            .pain-section,
+            .learn-section,
+            .smc-section,
+            .conversion-section,
+            .program-section,
+            .steps-section,
+            .experts-section,
+            .proof-section {
+                padding: 64px 0;
+            }
+
+            .hero p,
+            .check-list li,
+            .review-content-recreated p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 16px 20px;
+                font-size: 0.95rem;
+            }
+
+            .pain-grid,
+            .learn-grid,
+            .steps-grid,
+            .program-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .pain-card,
+            .learn-card,
+            .step-card,
+            .program-content,
+            .form-box {
+                padding: 24px 20px;
+            }
+
+            .program-img-container {
+                height: 160px;
+            }
+
+            .expert-card,
+            .review-card-horizontal {
+                gap: 16px;
+                padding: 20px;
+            }
+
+            .expert-photo-container {
+                width: 88px;
+                height: 88px;
+            }
+
+            .smc-visual .img-fluid {
+                width: 100% !important;
+                max-height: none !important;
+            }
+
+            .check-list li {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-banner-content h1 {
+                font-size: 1.6rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2,
+            .section-header h2 {
+                font-size: 1.55rem;
+            }
+
+            .badge-trust {
+                font-size: 10px;
+            }
+        }
     </style>
 </head>
 <body>
